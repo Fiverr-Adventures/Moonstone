@@ -1,0 +1,78 @@
+.containerprofile{
+    display: flex;
+    padding-right: 0px;
+    width: 100%;
+    .userProfile{
+        overflow: auto;
+        background-color: $white;
+        width: 100%;
+        border-radius: 20px 0px 0px 20px;
+        padding: 90px 90px 10px 72px;
+        @include flex(flex-start,flex-start);
+        flex-direction: column;
+        .main{
+            width: 100%;
+            max-width: 1440px;
+            margin-top: 37px;
+            @include flex(space-between,flex-start);
+            .editProfile{
+                margin-right: 18px;
+                flex: 1
+            }
+            .achiev-section{
+                flex: 1;
+                .sendCode {
+                    margin-top: 20px;
+                    input{
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @include for-size(desktop-down){
+        .main{
+            flex-direction: column;
+            .editProfile{
+                margin-bottom: 30px;
+            }
+        }
+    }
+    @include for-size(tablet-portrait-down){
+        padding-left: 0 !important;
+        .userProfile{
+            border-radius: 0px;
+        }
+    }
+    @include for-size(tablet-portrait-down){
+        position: relative;
+        // overflow: scroll;
+        .react-reveal{
+            z-index: 2;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            .userProfile{
+                height: 100%;
+                padding: 40px 10px 10px 30px;
+                position: absolute;
+                top: 8%;
+                border-radius: 20px 20px 0 0;
+            }
+        }
+        .sideBarContainer{
+            width: 100%;
+        }
+    }
+    @include for-size(phone-only){
+        .react-reveal{
+            .userProfile{
+                height: 100%;
+                padding: 40px 10px 10px 30px;
+                top: 12%;
+            }
+        }
+    }
+    
+}
